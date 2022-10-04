@@ -1,0 +1,17 @@
+th{
+  font-weight: bold;
+
+}
+table{
+  border: 1px solid black;
+  width: 60%;
+}
+.contact_table{
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+/* td{
+  display: flex;
+  justify-content: center;
+} */
