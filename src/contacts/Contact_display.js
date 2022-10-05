@@ -17,18 +17,42 @@ function Contact_display() {
      console.log("fetched data: ", contacts)
 
   return (
-    <div>
+    <div class="contact_view">
+      <h1>All Contacts</h1>
       {contacts ? (
         <div className="container">
 
           {contacts.map((contact,index)=>(
             <div className='row'>
-              <div className='col-sm-3'>{contact.firstName}</div>
-              <div className='col-sm-3'>{contact.lastName}</div>
-              <div className='col-sm-3'>{contact.phoneNumber}</div>
-              <div className='col-sm-3'>{contact.email}</div>
+            <div className='col-sm-2 table_input'>{contact.firstName}</div>
+            <div className='col-sm-2 table_input' >{contact.lastName}</div>
+            <div className='col-sm-2 table_input'>{contact.phoneNumber}</div>
+            <div className='col-sm-2 table_input'>{contact.email}</div>
+            </div>
 
-              </div>
+
+
+
+          // <table>
+          //   <tr>
+          //   <th>S.No</th>
+          //   <th>FirstName</th>
+          //   <th>LastName</th>
+          //   <th>Phone Number</th>
+          //   <th>Email</th>
+          //   </tr>
+
+          //   <tr>
+
+          //     <td>{contact.id}</td>
+          //     <td>{contact.firstName}</td>
+          //     <td>{contact.lastName}</td>
+          //     <td>{contact.phoneNumber}</td>
+          //     <td>{contact.email}</td>
+          //   </tr>
+          // </table>
+
+
 
 
           ))}
