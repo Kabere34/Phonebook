@@ -7,17 +7,13 @@ function SearchComponent() {
   const [searchterm, setSearch] = React.useState(null);
   const [receivedData, setReceivedData] = React.useState('');
 
-  const searchUrl =
-    `http://127.0.0.1:8000/phonebook/search/?search=${searchterm}`;
-
 
     React.useEffect(() => {
-        setContacts();
+        apiFetch();
     }, []);
 
-    // const url = `http://127.0.0.1:8000/phonebook/searching/?search=${searchterm.searchterm}`
 
-    let setContacts = async () => {
+    let apiFetch = async () => {
         let response = await fetch(`http://127.0.0.1:8000/phonebook/search/?search=${searchterm.searchterm}`);
         let data = await response.json();
         setReceivedData(data)
@@ -27,7 +23,7 @@ function SearchComponent() {
 
      const handleSubmit = (e) => {
             e.preventDefault();
-            setContacts()
+            apiFetch()
             console.log("searching for: ",searchterm.searchterm )
         }
 
@@ -35,9 +31,10 @@ function SearchComponent() {
     <div>
         <form onSubmit={handleSubmit}>
         <fieldset>
-          <label>search</label>
+
           <input
             type="text"
+            placeholder="search"
             name="searchterm"
             onChange={(e) =>
               setSearch({
@@ -47,7 +44,7 @@ function SearchComponent() {
             }
           ></input>
         </fieldset>
-        <button type="submit">submit</button>
+        <button className="btn btn-primary m-1" type="submit" style={{padding:"2px",width:"fit-content"}}>submit</button>
       </form>
 
       {receivedData ? (
@@ -57,7 +54,8 @@ function SearchComponent() {
         {receivedData.map((contact, index) =>(
 
           <div className="row">
-            <div className="col-sm-3">{contact.id}   ---{contact.firstName}</div>
+            <div>{contact.id}</div>
+            <div className="col-sm-3">  {contact.firstName}</div>
             <div className="col-sm-3">{contact.lastName}</div>
             <div className="col-sm-3">{contact.phoneNumber}</div>
             <div className="col-sm-3">{contact.email}</div>
@@ -73,4 +71,4 @@ function SearchComponent() {
   )
 }
 
-export default SearchComponent
+export default SearchComponent;
