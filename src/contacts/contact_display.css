@@ -33,16 +33,13 @@ table{
 }
 .table_input{
   border: 1px solid black;
-
 }
 .button_links{
-
  display:flex;
-
 }
-button{
+/* button{
   margin:10px;
-}
+} */
 .menu-barContainer{
   display: flex;
   justify-content: center;

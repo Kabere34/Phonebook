@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 // import { useDispatch } from "react-redux";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 import "./contact_form.css";
 
-const newContactUrl = "http://127.0.0.1:8000/phonebook/contactAdd";
+const newContactUrl = "https://ivy-phonebook.herokuapp.com//phonebook/contactAdd";
 const newcontactPost = (contact) => axios.post(newContactUrl, contact);
 
 const initialstate = {
@@ -15,7 +15,7 @@ const initialstate = {
   email: "",
 };
 
-function CreateContact() {
+function CreateContact(props) {
   const [newContact, setNewContact] = React.useState(initialstate);
 
   // const dispatch = useDispatch()
