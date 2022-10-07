@@ -4,7 +4,7 @@ import "../form/contact_form.css"
 import {  useLocation } from "react-router-dom";
 
 
-const EditContactUrl=`https://ivy-phonebook.herokuapp.com//phonebook/contactEdit/2/`
+const EditContactUrl=`https://ivy-phonebook.herokuapp.com/phonebook/contactEdit/2/`
 const editcontactPost=(contact)=> axios.post(EditContactUrl,contact)
 
 
@@ -17,7 +17,7 @@ const editcontactPost=(contact)=> axios.post(EditContactUrl,contact)
   const [email, setEmail] = React.useState(dataContent.state.value.email)
   const [idname, setIdname] = React.useState()
 
-  const EditContactsk=`https://ivy-phonebook.herokuapp.com//phonebook/contactEdit/${idname}/`
+  const EditContactsk=`https://ivy-phonebook.herokuapp.com/phonebook/contactEdit/${idname}/`
 
 
   const handleSubmit = (e) => {

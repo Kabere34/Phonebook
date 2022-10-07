@@ -5,7 +5,7 @@ import { Link, useLocation } from "react-router-dom";
 
 import "./contact_form.css";
 
-const newContactUrl = "https://ivy-phonebook.herokuapp.com//phonebook/contactAdd";
+const newContactUrl = "https://ivy-phonebook.herokuapp.com/phonebook/contactAdd";
 const newcontactPost = (contact) => axios.post(newContactUrl, contact);
 
 const initialstate = {

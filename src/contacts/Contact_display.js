@@ -15,7 +15,7 @@ const navigate = useNavigate()
 
   let getContacts = async () => {
     try{
-      let response = await fetch("https://ivy-phonebook.herokuapp.com//phonebook/contactView");
+      let response = await fetch("https://ivy-phonebook.herokuapp.com/phonebook/contactView");
       let data = await response.json();
       setContacts(data);
     }catch(err){

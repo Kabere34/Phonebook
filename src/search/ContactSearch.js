@@ -14,7 +14,7 @@ function SearchComponent(props) {
 
     let apiFetch = async () => {
       console.log(searchterm)
-        let response = await fetch(`https://ivy-phonebook.herokuapp.com//phonebook/search/?search=${searchterm}`);
+        let response = await fetch(`https://ivy-phonebook.herokuapp.com/phonebook/search/?search=${searchterm}`);
         let data = await response.json();
         console.log(data)
         setReceivedData(data)
