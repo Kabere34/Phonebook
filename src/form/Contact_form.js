@@ -24,6 +24,7 @@ function CreateContact(props) {
     e.preventDefault();
     newcontactPost(newContact);
     console.log("dispatch", newContact);
+    window.location.reload()
   };
 
   return (

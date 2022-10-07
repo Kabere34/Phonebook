@@ -2,14 +2,16 @@ import React,{useState, useEffect}  from 'react'
 import axios from "axios";
 import "../form/contact_form.css"
 import {  useLocation } from "react-router-dom";
-
+import { Link, useNavigate } from "react-router-dom";
 
 const EditContactUrl=`https://ivy-phonebook.herokuapp.com/phonebook/contactEdit/2/`
 const editcontactPost=(contact)=> axios.post(EditContactUrl,contact)
 
 
+
  function EditContact(props) {
    const dataContent = useLocation()
+   const navigate=useNavigate()
 
   const [firstName, setFirstNames] = React.useState(dataContent.state.value.firstName)
   const [lastName, setLastName] = React.useState(dataContent.state.value.lastName)
@@ -30,6 +32,9 @@ const editcontactPost=(contact)=> axios.post(EditContactUrl,contact)
   email : email,
   id: dataContent.state.value.id
     })
+
+
+navigate('/')
 
 console.log(EditContactsk)
     // console.log("dispatch",newContact)
