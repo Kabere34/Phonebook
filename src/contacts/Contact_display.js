@@ -27,7 +27,7 @@ const navigate = useNavigate()
 
   const handleDelete=(e) =>{
     console.log(e)
-    const url = `http://127.0.0.1:8000/phonebook/deleteContact/${e}/`
+    const url = `https://ivy-phonebook.herokuapp.com/phonebook/deleteContact/${e}/`
     axios.post(url).then(response=>console.log(response.data)).catch(err=>console.log(err))
   }
   const openEditHandler =(value) =>{
