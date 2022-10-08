@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 // import { useDispatch } from "react-redux";
 import axios from "axios";
-import { Link, useLocation,useNavigate } from "react-router-dom";
+import { Link, Navigate, useLocation,useNavigate } from "react-router-dom";
 
 import "./contact_form.css";
+
 
 const newContactUrl = "https://ivy-phonebook.herokuapp.com/phonebook/contactAdd";
 const newcontactPost = (contact) => axios.post(newContactUrl, contact);
@@ -19,13 +20,16 @@ function CreateContact(props) {
   const [newContact, setNewContact] = React.useState(initialstate);
 
   // const dispatch = useDispatch()
+  const navigate=useNavigate()
 
   const handleSubmit = (e) => {
     e.preventDefault();
     newcontactPost(newContact);
     console.log("dispatch", newContact);
     // window.location.reload()
-  };
+
+    navigate('/')
+  }
 
   return (
     <>
