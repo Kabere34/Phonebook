@@ -4,7 +4,7 @@ import "../form/contact_form.css"
 import {  useLocation } from "react-router-dom";
 import { Link, useNavigate } from "react-router-dom";
 
-const EditContactUrl=`https://ivy-phonebook.herokuapp.com/phonebook/contactEdit/2/`
+const EditContactUrl=`https://ivy-phonebook.herokuapp.com/phonebook/contactEdit/4/`
 const editcontactPost=(contact)=> axios.post(EditContactUrl,contact)
 
 
