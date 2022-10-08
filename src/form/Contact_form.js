@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 // import { useDispatch } from "react-redux";
 import axios from "axios";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation,useNavigate } from "react-router-dom";
 
 import "./contact_form.css";
 
@@ -24,7 +24,7 @@ function CreateContact(props) {
     e.preventDefault();
     newcontactPost(newContact);
     console.log("dispatch", newContact);
-    window.location.reload()
+    // window.location.reload()
   };
 
   return (
@@ -99,7 +99,7 @@ function CreateContact(props) {
             ></input>
           </fieldset>
           <div className='button_container'>
-            <button className="btn btn-primary p-2 m-2" style={{width:'fit-content'}} type='submit'>submit</button>
+            <button className="btn btn-primary p-2 m-2" style={{width:'fit-content'}} type='submit'>Save</button>
           </div>
         </form>
       </div>

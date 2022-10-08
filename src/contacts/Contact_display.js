@@ -3,11 +3,16 @@ import "./contact_display.css";
 // import Button from '@material-ui/core/Button';
 import SearchComponent from "../search/ContactSearch";
 
+
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+
 const ContactDisplay = ()=>{
 // function ContactDisplay() {
   const [contacts, setContacts] = React.useState([]);
+  const [editId,setEditId] = React.useState([]);
+
+
 const navigate = useNavigate()
   React.useEffect(() => {
     getContacts();
@@ -26,13 +31,15 @@ const navigate = useNavigate()
   // console.log("fetched data: ", contacts);
 
   const handleDelete=(e) =>{
+
     console.log(e)
-    const url = `https://ivy-phonebook.herokuapp.com/phonebook/deleteContact/${e}/`
+    const url = `https://ivy-phonebook.herokuapp.com/phonebook/deleteContact/${e}/`;
     axios.post(url).then(response=>console.log(response.data)).catch(err=>console.log(err))
     window.location.reload()
   }
   const openEditHandler =(value) =>{
-    console.log(value)
+    setEditId(value.id)
+    console.log(value,'VALUE')
 navigate('/edit-contact', {
   state:{
     value: value
