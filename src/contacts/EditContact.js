@@ -66,7 +66,7 @@ function EditContact(props) {
 
   return (
     <div>
-      EditContact
+
       <div className='contact_form'>
         <form onSubmit={handleSubmit}>
           <fieldset>
@@ -109,7 +109,7 @@ function EditContact(props) {
             ></input>
           </fieldset>
           <div className='button_container'>
-            <button type='submit'>submit</button>
+            <button type='submit' style={{marginTop:"10px",backgroundColor:"#0892d0",border:"None"}}>Edit</button>
           </div>
         </form>
       </div>
