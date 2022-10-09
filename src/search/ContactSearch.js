@@ -32,8 +32,7 @@ function SearchComponent(props) {
   return (
     <div>
         <form onSubmit={handleSubmit}>
-        <fieldset>
-
+      
           <input
             type="text"
             placeholder="search"
@@ -43,7 +42,7 @@ function SearchComponent(props) {
               )
             }
           ></input>
-        </fieldset>
+
         <button className="btn btn-primary m-1" type="submit" style={{padding:"2px",width:"fit-content"}}>submit</button>
       </form>
 

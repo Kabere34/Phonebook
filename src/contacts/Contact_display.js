@@ -86,6 +86,8 @@ navigate('/edit-contact', {
         <div className='container'>
           {" "}
           <table className="table table-stripped">
+            <thead>
+
             <tr>
               <th>S.No</th>
               <th>FirstName</th>
@@ -93,6 +95,9 @@ navigate('/edit-contact', {
               <th>Phone Number</th>
               <th>Email</th>
             </tr>
+            </thead>
+            <tbody>
+
             {contacts.map((contact, index) => (
               <tr key={contact.id}>
 
@@ -102,13 +107,16 @@ navigate('/edit-contact', {
                 <td>{contact.phoneNumber}</td>
                 <td>{contact.email}</td>
                 <td>
-                  <button className="btn-primary btn m-2" style={{backgroundColor:"blue"}} onClick={()=>openEditHandler(contact)}>edit</button>
+                  <button className="btn-primary btn m-2" style={{backgroundColor:"#28a9d7"}} onClick={()=>openEditHandler(contact)}>edit</button>
 
                   <button type="submit" onClick={()=>handleDelete(contact.id)}className="btn-primary btn m-2" style={{backgroundColor:"red"}}>delete</button>
                   </td>
               </tr>
 
+
             ))}{" "}
+            </tbody>
+
           </table>
         </div>
       ) : (
